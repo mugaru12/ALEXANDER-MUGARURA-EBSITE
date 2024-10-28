@@ -1,0 +1,69 @@
+
+<STYLE.
+.custom-list {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.custom-list li {
+    background-color: #4CAF50;
+    color: white;
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Custom bullet using ::before */
+.custom-list li::before {
+    content: "•";
+    color: #FFEB3B;
+    font-size: 20px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Styling Ordered List */
+.custom-ordered-list {
+    counter-reset: list-counter; /* Reset the counter */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-ordered-list li {
+    counter-increment: list-counter; /* Increment counter for each item */
+    background-color: #3F51B5;
+    color: white;
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    position: relative;
+    padding-left: 35px;
+}
+
+/* Custom number styling using ::before */
+.custom-ordered-list li::before {
+    content: counter(list-counter) ". ";
+    color: #FFEB3B;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute;
+    left: 10px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+    .custom-list li, .custom-ordered-list li {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+</STYLE>
